@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the cloud the sea</title>
+<meta name="description" content="the cloud the sea, by Alex Przybyla.">
+<style>
+:root{
+  --ink:#292540;
+  --paper:#f2edf1;
+  --rule:rgba(63,56,76,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#dcd5da;
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+a{color:inherit}
+
+/* POSTER FIRST. Keep the v9 composition intact and let the writing sit beneath it. */
+.poster-wrap{
+  width:min(1200px,100vw);
+  margin:0 auto;
+  background:var(--paper);
+  box-shadow:0 0 50px rgba(35,28,43,.10);
+}
+.poster{
+  position:relative;
+  width:100%;
+  aspect-ratio:3/4;
+  overflow:hidden;
+  background:url("assets/ocean.jpg") center/100% 100% no-repeat;
+}
+.poster:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:30;
+  background:linear-gradient(to bottom,rgba(250,248,250,.025),transparent 58%,rgba(30,25,48,.025));
+}
+.hand-title{
+  position:absolute;
+  z-index:25;
+  left:50%;
+  transform:translateX(-50%);
+  height:auto;
+  mix-blend-mode:multiply;
+  filter:contrast(1.08);
+}
+.title-cloud{top:9.5%;width:62%;height:auto}
+.title-sea{top:46.5%;width:51%;height:auto}
+.signature{
+  position:absolute;
+  z-index:25;
+  top:2.6%;
+  left:50%;
+  transform:translateX(-50%);
+  width:10%;
+  height:auto;
+}
+.signature img{width:100%;display:block}
+
+/* WRITING FIELD */
+.writing{
+  background:var(--paper);
+  padding:4.2% 8% 3.2%;
+}
+.writing-inner{width:100%;margin:0 auto}
+.hand-category{width:100%;margin:0 0 2.4%}
+.hand-category img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  mix-blend-mode:multiply;
+}
+.poems-heading img{width:150px}
+.older-heading img{width:205px}
+
+/* Five published headliners: three across, then two across. */
+.published-grid{
+  display:flex;
+  flex-direction:column;
+  gap:4.8rem;
+  align-items:center;
+}
+.pub-card{
+  width:100%;
+  min-width:0;
+  display:block;
+  text-decoration:none;
+  padding-top:2.2rem;
+  border-top:1px solid var(--rule);
+}
+.pub-card img{
+  display:block;
+  height:auto;
+  mix-blend-mode:multiply;
+  margin:0 auto;
+}
+/* Keep the v11 proportions rather than letting every source image become a giant full-width block. */
+.pub-card.rain img{width:78%;}
+.pub-card.beneath img{width:55%;}
+.pub-card.music img{width:68%;}
+.pub-card.tomorrow img{width:82%;}
+.pub-card.article > img:not(.article-label){width:78%;}
+.pub-card.article .article-label{width:115px;margin:0 0 .6rem 0;}
+
+.lower-sections{
+  margin-top:7.5%;
+  padding-top:3.1%;
+  border-top:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7%;
+  align-items:start;
+}
+.lower-section{min-width:0}
+.section-text-label{
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  opacity:.58;
+  margin-bottom:1.2rem;
+}
+.stories-img{
+  display:block;
+  width:100%;
+  height:auto;
+  mix-blend-mode:multiply;
+}
+
+.archive{
+  margin-top:5%;
+  padding-top:2.7%;
+  border-top:1px solid var(--rule);
+  text-align:center;
+}
+.other-heading{display:flex;justify-content:center}
+.other-heading img{display:block;width:205px;height:auto;mix-blend-mode:multiply;margin:0 auto}
+.other-links-image{position:relative;margin:1.25rem auto 0;width:100%;}
+.other-links-image>img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.hotspot{position:absolute;display:block;z-index:2}
+.archive-hotspot{left:4%;top:0%;width:92%;height:31%}
+.alex-hotspot{left:4%;top:31%;width:60%;height:33%}
+.habla-hotspot{left:4%;top:64%;width:60%;height:34%}
+.tiny-about{
+  text-align:center;
+  margin-top:3.2%;
+  font-size:8px;
+  letter-spacing:.05em;
+  opacity:.42;
+}
+footer{
+  margin-top:3.5%;
+  text-align:center;
+  font-size:8px;
+  letter-spacing:.08em;
+  opacity:.4;
+}
+
+@media(max-width:760px){
+  .poster-wrap{width:100%;box-shadow:none}
+  .title-cloud{top:9.5%;width:59%}
+  .title-sea{top:46.5%;width:51%}
+  .signature{top:2.8%;width:13%}
+  .writing{padding:7% 9% 6%}
+  .poems-heading img{width:115px}
+  .other-heading img{width:155px}
+  .published-grid{gap:3.4rem}
+  .pub-card.rain img{width:92%}
+  .pub-card.beneath img{width:72%}
+  .pub-card.music img{width:84%}
+  .pub-card.tomorrow img{width:94%}
+  .pub-card.article img{width:92%}
+  .lower-sections{grid-template-columns:1fr;gap:9%}
+  .other-links-image{margin-top:1.1rem}
+}
+</style>
+</head>
+<body>
+<div class="poster-wrap">
+
+<section class="poster" aria-label="the cloud the sea poster">
+  <div class="signature">
+    <img src="assets/signature.png" alt="Alex Przybyla, handwritten signature">
+  </div>
+  <img class="hand-title title-cloud" src="assets/title_cloud.png" alt="the Cloud">
+  <img class="hand-title title-sea" src="assets/title_sea.png" alt="The Sea">
+</section>
+
+<main class="writing" id="writing">
+  <div class="writing-inner">
+
+    <div class="hand-category poems-heading">
+      <img src="assets/poems_label.png" alt="poems">
+    </div>
+
+    <section class="published-grid" aria-label="published work">
+      <a class="pub-card rain" href="#" aria-label="rain is rare and it is welcome but it doesn't solve anything and actually that's okay">
+        <img src="assets/rain_entry_v8.png" alt="rain is rare and it is welcome but it doesn't solve anything and actually that's okay, The Bangalore Review, May 2025">
+      </a>
+      <a class="pub-card beneath" href="#" aria-label="Beneath the Willows">
+        <img src="assets/beneath_entry_v8.png" alt="Beneath the Willows, Eunoia Review, October 2026">
+      </a>
+      <a class="pub-card music" href="#" aria-label="music is math that floats in the air">
+        <img src="assets/ekphrastic_entry_v8.png" alt="music is math that floats in the air, The Ekphrastic Review, September 2026">
+      </a>
+      <a class="pub-card tomorrow" href="#" aria-label="Tomorrow I will be another I">
+        <img src="assets/tomorrow_entry_v8.png" alt="Tomorrow I will be another I, California Quarterly, Spring 2023, print only">
+      </a>
+      <a class="pub-card article" href="https://reactormag.com/stanislaw-lems-greatest-character-an-introduction-to-ijon-tichy/" aria-label="Stanislaw Lem's Greatest Character: An Introduction to Ijon Tichy">
+        <img class="article-label" src="assets/article_label.png" alt="article.">
+        <img src="assets/article_ijon.png" alt="Stanislaw Lem's Greatest Character: An Introduction to Ijon Tichy, Reactor Magazine, October 2025">
+      </a>
+    </section>
+
+    <section class="lower-sections" aria-label="stories and older things">
+      <div class="lower-section">
+        <div class="section-text-label">stories</div>
+        <a href="#" aria-label="The Lost Umbrella">
+          <img class="stories-img" src="assets/lost_umbrella_entry.png" alt="The Lost Umbrella, the cloud the sea, Shanghai, 2015">
+        </a>
+      </div>
+
+      <div class="lower-section other-section">
+        <div class="other-heading">
+          <img src="assets/older_things_label.png" alt="the older things">
+        </div>
+        <div class="other-links-image">
+          <img src="assets/older_links.png" alt="the cloud the sea archive, alexprzybyla.com, hablandosolo.com">
+          <a class="hotspot archive-hotspot" href="https://thecloudthesea.com/" aria-label="the cloud the sea archive"></a>
+          <a class="hotspot alex-hotspot" href="https://alexprzybyla.com/" aria-label="alexprzybyla.com"></a>
+          <a class="hotspot habla-hotspot" href="https://hablandosolo.com/" aria-label="hablandosolo.com"></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="tiny-about">poems, stories, essays and other things by Alex Przybyla.</div>
+    <footer>the cloud the sea</footer>
+
+  </div>
+</main>
+
+</div>
+</body>
+</html>
