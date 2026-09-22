@@ -125,6 +125,8 @@ a{color:inherit}
   border-top:1px solid var(--rule);
   text-align:center;
 }
+.articles-heading{display:flex;justify-content:center;margin:0 0 2.4%}
+.articles-heading img{display:block;width:150px;height:auto;mix-blend-mode:multiply}
 .articles-section .pub-card.article{
   border-top:none;
   padding-top:0;
@@ -236,6 +238,7 @@ footer{
   .signature{top:2.8%;width:13%}
   .writing{padding:7% 9% 6%}
   .poems-heading img{width:115px}
+  .articles-heading img{width:115px}
   .other-heading img{width:155px}
   .published-grid{gap:3.4rem}
   .pub-card.rain img{width:92%}
@@ -285,7 +288,9 @@ footer{
     </section>
 
     <section class="articles-section" aria-label="articles">
-      <div class="section-text-label">articles</div>
+      <div class="articles-heading">
+        <img src="assets/articles_label.png" alt="articles">
+      </div>
       <a class="pub-card article" href="https://reactormag.com/stanislaw-lems-greatest-character-an-introduction-to-ijon-tichy/" aria-label="Stanislaw Lem's Greatest Character: An Introduction to Ijon Tichy">
         <img class="article-label" src="assets/article_label.png" alt="article.">
         <img src="assets/article_ijon.png" alt="Stanislaw Lem's Greatest Character: An Introduction to Ijon Tichy, Reactor Magazine, October 2025">
