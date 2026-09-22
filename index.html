@@ -172,8 +172,52 @@ footer{
   opacity:.4;
 }
 
+
+/* OPTIONAL CLOUD EXPERIMENT: decorative, extremely slow, background-removed cloud */
+.floating-cloud{
+  position:absolute;
+  z-index:20;
+  pointer-events:none;
+  user-select:none;
+  width:min(72vw, 980px);
+  height:auto;
+  left:-38vw;
+  top:2vh;
+  opacity:0;
+  mix-blend-mode:normal;
+  filter:saturate(.92);
+  animation:cloudDrift 180s linear infinite;
+  will-change:transform,opacity;
+}
+@keyframes cloudDrift{
+  0%{
+    transform:translate3d(0, 0, 0) rotate(-1deg);
+    opacity:0;
+  }
+  7%{
+    opacity:.286;
+  }
+  25%{
+    transform:translate3d(30vw, -1vh, 0) rotate(.3deg);
+  }
+  50%{
+    transform:translate3d(62vw, 2vh, 0) rotate(1deg);
+  }
+  75%{
+    transform:translate3d(94vw, -1vh, 0) rotate(.2deg);
+  }
+  93%{
+    opacity:.286;
+  }
+  100%{
+    transform:translate3d(126vw, 0, 0) rotate(-1deg);
+    opacity:0;
+  }
+}
+
 @media(max-width:760px){
   .poster-wrap{width:100%;box-shadow:none}
+  .floating-cloud{width:112vw;left:-58vw;top:1vh;animation-duration:150s}
   .title-cloud{top:9.5%;width:59%}
   .title-sea{top:46.5%;width:51%}
   .signature{top:2.8%;width:13%}
@@ -195,6 +239,7 @@ footer{
 <div class="poster-wrap">
 
 <section class="poster" aria-label="the cloud the sea poster">
+  <img class="floating-cloud" src="assets/floating_cloud.png" alt="" aria-hidden="true">
   <div class="signature">
     <img src="assets/signature.png" alt="Alex Przybyla, handwritten signature">
   </div>
