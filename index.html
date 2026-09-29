@@ -249,68 +249,6 @@ footer{
   .other-links-image{margin-top:1.1rem}
 }
 
-/* MESSAGE IN A BOTTLE: tiny, quiet, discovered not displayed */
-.bottle{
-  position:absolute;
-  z-index:22;
-  left:9%;
-  top:63%;
-  width:clamp(46px,6%,80px);
-  margin:0;
-  padding:0;
-  background:none;
-  border:0;
-  cursor:pointer;
-  opacity:.94;
-  -webkit-tap-highlight-color:transparent;
-  animation:bottleBob 8s ease-in-out infinite;
-  will-change:transform;
-}
-.bottle img{width:100%;height:auto;display:block}
-.bottle:hover{opacity:1}
-@keyframes bottleBob{
-  0%,100%{transform:translate3d(0,0,0) rotate(-1.4deg)}
-  50%{transform:translate3d(0,-6px,0) rotate(1.4deg)}
-}
-.bottle-note{
-  position:absolute;
-  z-index:40;
-  left:4%;
-  top:76%;
-  width:min(240px,64%);
-  background:var(--paper);
-  border:1px solid var(--rule);
-  box-shadow:0 8px 26px rgba(35,28,43,.18);
-  padding:.85rem 2rem .85rem 1rem;
-  font-size:12.5px;
-  line-height:1.6;
-  color:var(--ink);
-  transform:rotate(-.6deg);
-}
-.bottle-note:not([hidden]){animation:noteIn .4s ease}
-@keyframes noteIn{
-  from{opacity:0;transform:translateY(6px) rotate(-.6deg)}
-  to{opacity:1;transform:translateY(0) rotate(-.6deg)}
-}
-.bottle-note p{margin:0}
-.bottle-note-close{
-  position:absolute;
-  top:.15rem;
-  right:.45rem;
-  background:none;
-  border:0;
-  padding:.2rem;
-  font-size:15px;
-  line-height:1;
-  color:var(--ink);
-  opacity:.5;
-  cursor:pointer;
-}
-.bottle-note-close:hover{opacity:.9}
-@media (prefers-reduced-motion:reduce){
-  .bottle{animation:none}
-  .bottle-note:not([hidden]){animation:none}
-}
 </style>
 </head>
 <body>
@@ -323,13 +261,6 @@ footer{
   </div>
   <img class="hand-title title-cloud" src="assets/title_cloud.png" alt="the Cloud">
   <img class="hand-title title-sea" src="assets/title_sea.png" alt="The Sea">
-  <button class="bottle" id="bottle" aria-expanded="false" aria-controls="bottle-note" aria-label="a message in a bottle">
-    <img src="assets/bottle.png" alt="">
-  </button>
-  <div class="bottle-note" id="bottle-note" hidden role="dialog" aria-label="message in a bottle">
-    <p>Alex Przybyla&rsquo;s writing has been politely declined by literary magazines in 75 cities and 9 countries on 4 continents.</p>
-    <button class="bottle-note-close" aria-label="close the note">&times;</button>
-  </div>
 </section>
 
 <main class="writing" id="writing">
@@ -392,19 +323,5 @@ footer{
 </main>
 
 </div>
-<script>
-(function(){
-  var b=document.getElementById('bottle'), n=document.getElementById('bottle-note');
-  if(!b||!n) return;
-  function close(){ n.hidden=true; b.setAttribute('aria-expanded','false'); }
-  b.addEventListener('click', function(){
-    var open=n.hidden;
-    n.hidden=!open;
-    b.setAttribute('aria-expanded', String(open));
-  });
-  n.querySelector('.bottle-note-close').addEventListener('click', close);
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
-})();
-</script>
 </body>
 </html>
